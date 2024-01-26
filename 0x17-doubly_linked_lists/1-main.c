@@ -5,7 +5,7 @@
 
 /**
  * main - check the code
- * 
+ *
  * Return: Always EXIT_SUCCESS.
  */
 int main(void)
@@ -14,6 +14,7 @@ int main(void)
 	dlistint_t *new;
 	dlistint_t hello = {8, NULL, NULL};
 	size_t n;
+
 	head = &hello;
 	new = malloc(sizeof(dlistint_t));
 	if (new == NULL)
@@ -22,8 +23,8 @@ int main(void)
 		return (EXIT_FAILURE);
 	}
 	new->n = 9;
-	head->prev = new;
-	new->next = head;
+	hello.prev = new;
+	new->next = &hello;
 	new->prev = NULL;
 	head = new;
 	n = dlistint_len(head);
