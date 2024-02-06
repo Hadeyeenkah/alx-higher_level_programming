@@ -48,4 +48,3 @@ if __name__ == "__main__":
     print("--")
     my_square = Square(5, (4, 1))
     my_square.my_print()
-
