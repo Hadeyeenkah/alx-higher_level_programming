@@ -21,4 +21,3 @@ class MagicClass:
         if type(value) is not int and type(value) is not float:
             raise TypeError("radius must be a number")
         self.__radius = value
-
