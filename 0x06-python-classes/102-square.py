@@ -1,68 +1,54 @@
 #!/usr/bin/python3
-class Square:
-    def __init__(self, size=0):
-        self.size = size
+"""square module."""
+
+class square:
+    """Define a square."""
+
+    def__init(self, size=0):
+    """Contructor.
+
+    Args:
+    size: lenght of a side of the square.
+    """
+    self.size = size
 
     @property
     def size(self):
-        return self.__size
+        """property for the length of a side of this square.
+
+        Raises:
+        TypeError: if size is not an integer.
+        valueError: if size is less than 0.
+        """
+        return self._size = size
 
     @size.setter
-    def size(self, value):
-        if not isinstance(value, (int, float)):
-            raise TypeError("size must be a number")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        self.__size = value
+    def size(self,value):
+        if not isinstance(value, int):
+            rasise TypeError('size must be >= 0')
+            self._size = value
 
-    def area(self):
-        return self.__size ** 2
+            def area(self):
+                """Area of this square.
 
-    def __eq__(self, other):
-        if isinstance(other, Square):
-            return self.area() == other.area()
-        return False
+                Returns:
+                The size squared.
+                """
+                return self._size ** 2
+            def _eq_(self, other):
+                return self.area() == other.area()
 
-    def __ne__(self, other):
-        if isinstance(other, Square):
-            return self.area() != other.area()
-        return True
+            def _ne_(self, other):
+                return self.area() != other.area()
 
-    def __lt__(self, other):
-        if isinstance(other, Square):
-            return self.area() < other.area()
-        return False
+            def _ge_(self, other):
+                return self.area() >= other.area()
 
-    def __le__(self, other):
-        if isinstance(other, Square):
-            return self.area() <= other.area()
-        return False
+            def _gt_(self, other):
+                return self.area() > other.area()
 
-    def __gt__(self, other):
-        if isinstance(other, Square):
-            return self.area() > other.area()
-        return False
+            def _it_(self, other):
+                return self.area() <= other.area()
 
-    def __ge__(self, other):
-        if isinstance(other, Square):
-            return self.area() >= other.area()
-        return False
-
-
-if __name__ == "__main__":
-    s_5 = Square(5)
-    s_6 = Square(6)
-
-    if s_5 < s_6:
-        print("Square 5 < Square 6")
-    if s_5 <= s_6:
-        print("Square 5 <= Square 6")
-    if s_5 == s_6:
-        print("Square 5 == Square 6")
-    if s_5 != s_6:
-        print("Square 5 != Square 6")
-    if s_5 > s_6:
-        print("Square 5 > Square 6")
-    if s_5 >= s_6:
-        print("Square 5 >= Square 6")
-
+            def _le_(self, other):
+                return self.area() < other.area()
